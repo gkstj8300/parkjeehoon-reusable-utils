@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { kr } from './domain/kr';
 
 export const date = (
 	value: string | undefined,
@@ -13,6 +14,6 @@ export const date = (
 	if (!localDateTime.isValid()) {
 		return undefined;
 	}
-	const dateFormat = specifiedFormat;
+	const dateFormat = specifiedFormat || kr.format.date;
 	return localDateTime.format(dateFormat);
 };
