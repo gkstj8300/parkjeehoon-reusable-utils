@@ -1,9 +1,15 @@
 import dayjs from 'dayjs';
 import { kr } from './domain/kr';
 
+/**
+ * 
+ * @param value 날짜
+ * @param format 포멧
+ * @returns 
+ */
 export const date = (
 	value: string | undefined,
-	specifiedFormat?: string
+	format?: string
 ): string | undefined => {
 	if (!value) {
 		return undefined;
@@ -14,6 +20,6 @@ export const date = (
 	if (!localDateTime.isValid()) {
 		return undefined;
 	}
-	const dateFormat = specifiedFormat || kr.format.date;
+	const dateFormat = format || kr.format.date;
 	return localDateTime.format(dateFormat);
 };
