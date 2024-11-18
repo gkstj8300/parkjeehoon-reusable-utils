@@ -10,7 +10,6 @@ export type Country = {
 			decimalPoint: string;
 		};
 	};
-	/** タイムゾーン */
 	timezone: string;
 };
 
